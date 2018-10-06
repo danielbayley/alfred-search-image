@@ -1,0 +1,57 @@
+---
+name: Image Search
+version: 0.1.0
+category: Design
+bundleid: me.danielbayley.alfred-search-image
+createdby: Daniel Bayley
+webaddress: https://github.com/danielbayley/alfred-search-image#readme
+objects:
+- config:
+    withspace: true
+    keyword: img
+    text: Image Search
+  uid: A2F3EF8F-D361-466E-89CA-0FD33226B7F0
+  version: 1
+  type: alfred.workflow.input.keyword
+- config:
+    scriptargtype: 1
+    concurrently: false
+    type: 8
+    scriptfile: search.rb
+  uid: 24236BDF-F5DB-48C0-B27A-04388852369D
+  version: 2
+  type: alfred.workflow.action.script
+- config:
+    cachescript: true
+  uid: F5448886-20DB-4692-82D8-B30FE664B958
+  version: 1
+  type: alfred.workflow.action.applescript
+- config:
+    sourcefile: links.csv
+  uid: 945FF44B-3FAF-4093-AB13-7CB929598317
+  version: 3
+  type: alfred.workflow.action.openfile
+connections:
+  A2F3EF8F-D361-466E-89CA-0FD33226B7F0:
+  - destinationuid: 24236BDF-F5DB-48C0-B27A-04388852369D
+    vitoclose: false
+  - modifiersubtext: Edit links
+    modifiers: 524288
+    destinationuid: 945FF44B-3FAF-4093-AB13-7CB929598317
+    vitoclose: false
+  24236BDF-F5DB-48C0-B27A-04388852369D:
+  - destinationuid: F5448886-20DB-4692-82D8-B30FE664B958
+    vitoclose: false
+uidata:
+  A2F3EF8F-D361-466E-89CA-0FD33226B7F0:
+    ypos: 20
+    xpos: 20
+  945FF44B-3FAF-4093-AB13-7CB929598317:
+    ypos: 140
+    xpos: 220
+  24236BDF-F5DB-48C0-B27A-04388852369D:
+    ypos: 20
+    xpos: 220
+  F5448886-20DB-4692-82D8-B30FE664B958:
+    ypos: 20
+    xpos: 370
